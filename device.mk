@@ -8,6 +8,12 @@ endif
 
 DEVICE_BASE_BOOT_IMAGE := $(LOCAL_PATH)/blobs/boot.img
 
+PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
+PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_CHARACTERISTICS := tablet
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel
 
 # Ramdisk fstab / rc files
 PRODUCT_COPY_FILES += \    $(LOCAL_PATH)/ramdisk/fstab.sun9i:root/fstab.sun9i \
