@@ -7,6 +7,7 @@ else
 endif
 
 DEVICE_BASE_BOOT_IMAGE := $(LOCAL_PATH)/blobs/boot.img
+DEVICE_BASE_RECOVERY_IMAGE := device/onda/v989/blobs/recovery.img
 
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
