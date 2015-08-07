@@ -17,7 +17,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
 # Ramdisk fstab / rc files
-PRODUCT_COPY_FILES += \    $(LOCAL_PATH)/ramdisk/fstab.sun9i:root/fstab.sun9i \
+PRODUCT_COPY_FILES += \    
+$(LOCAL_PATH)/ramdisk/fstab.sun9i:root/fstab.sun9i \
 $(LOCAL_PATH)/ramdisk/init.common.rc:root/init.common.rc \
 $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
 $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
