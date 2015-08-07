@@ -11,6 +11,9 @@
 /dev/block/by-name/misc               /misc           emmc    defaults                                                        defaults
 /dev/block/by-name/recovery           /recovery       emmc    defaults                                                        defaults
 /dev/block/by-name/cache              /cache          ext4    defaults                                                        defaults
-/dev/block/mmcblk1p1                  /external_sd    vfat    defaults                                                        defaults
+/dev/block/mmcblk1p1                  /extsd          vfat    defaults                                                        defaults
+/dev/block/mmcblk1                    /extsd          vfat    defaults                                                        defaults
+/dev/block/mmcblk0p1                  /extsd          vfat    defaults                                                        defaults
+/dev/block/mmcblk0                    /extsd          vfat    defaults                                                        defaults
 /dev/block/sda1                       /usbhost        vfat    defaults                                                        defaults
 /dev/block/sda                        /usbhost        vfat    defaults                                                        defaults
