@@ -25,4 +25,3 @@ frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/andr
 frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml 
  
  $(call inherit-product-if-exists, vendor/onda/v989/v989Config.mk)
- $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
