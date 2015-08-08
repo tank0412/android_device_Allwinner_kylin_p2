@@ -1,5 +1,5 @@
 $(call inherit-product, device/onda/v989/full_v989.mk)
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 DEVICE_RESOLUTION := 1536x2048
 TARGET_SCREEN_HEIGHT := 2048
