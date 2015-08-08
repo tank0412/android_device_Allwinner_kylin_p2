@@ -1,3 +1,6 @@
 $(call inherit-product, device/onda/v989/full_v989.mk)
 
 PRODUCT_NAME := cm_v989
+DEVICE_RESOLUTION := 1536x2048
+TARGET_SCREEN_HEIGHT := 2048
+TARGET_SCREEN_WIDTH := 1536
