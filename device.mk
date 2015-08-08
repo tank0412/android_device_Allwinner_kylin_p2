@@ -1,20 +1,12 @@
-LOCAL_PATH := device/onda/v989
-
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/blobs/zImage
+	LOCAL_KERNEL := device/onda/v989/blobs/zImage
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-DEVICE_BASE_BOOT_IMAGE := $(LOCAL_PATH)/blobs/boot.img
-DEVICE_BASE_RECOVERY_IMAGE := device/onda/v989/blobs/recovery.img
-
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_CHARACTERISTICS := tablet
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
 
 # Ramdisk fstab / rc files
 PRODUCT_COPY_FILES += \
