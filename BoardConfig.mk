@@ -6,8 +6,6 @@ TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 TARGET_BOARD_PLATFORM := kylin
 TARGET_PREBUILT_KERNEL := device/onda/v989/blobs/zImage
-DEVICE_BASE_BOOT_IMAGE := device/onda/v989/blobs/boot.img
-DEVICE_BASE_RECOVERY_IMAGE := device/onda/v989/blobs/recovery.img
 
 BOARD_NAND_PAGE_SIZE := 4096
 BOARD_NAND_SPARE_SIZE := 128

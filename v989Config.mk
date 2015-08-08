@@ -2,8 +2,6 @@ LOCAL_PATH := device/onda/v989
 
 PRODUCT_MANUFACTURER := onda
 PRODUCT_MODEL := v989
-PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/blobs/zImage:kernel
 PRODUCT_PACKAGES += \
  	com.android.future.usb.accessory \
  	libnetcmdiface \
