@@ -6,6 +6,8 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_CHARACTERISTICS := tablet
@@ -44,3 +46,43 @@ $(LOCAL_PATH)/frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/per
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
     ro.secure=0
+
+# Wifi
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant
+
+
+# video decoder encoder
+PRODUCT_PACKAGES += \
+    libOMXVideoDecoderAVC \
+    libOMXVideoDecoderH263 \
+    libOMXVideoDecoderMPEG4 \
+    libOMXVideoDecoderWMV \
+    libOMXVideoEncoderAVC \
+    libOMXVideoEncoderH263 \
+    libOMXVideoEncoderMPEG4 \
+    libOMXVideoDecoderAVCSecure
+
+# image decover
+PRODUCT_PACKAGES += \
+    libmix_imagedecoder \
+    libmix_imageencoder
+
+# Media SDK and OMX IL components
+PRODUCT_PACKAGES += \
+    msvdx_bin \
+    topaz_bin
+
+
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio.primary.default
+
+
+
