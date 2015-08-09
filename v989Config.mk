@@ -1,7 +1,7 @@
 LOCAL_PATH := device/onda/v989
 
 PRODUCT_MANUFACTURER := onda
-PRODUCT_MODEL := v989
+PRODUCT_MODEL := ONDA_V989
 PRODUCT_PACKAGES += \
  	com.android.future.usb.accessory \
  	libnetcmdiface \
