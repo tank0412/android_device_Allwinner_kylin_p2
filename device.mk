@@ -1,6 +1,10 @@
 LOCAL_PATH := device/onda/v989
 
-TARGET_PREBUILT_KERNEL := device/onda/v989/kernel
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/onda/v989/kernel
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
