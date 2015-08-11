@@ -5,7 +5,7 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 TARGET_BOARD_PLATFORM := kylin
-TARGET_PREBUILT_KERNEL := device/onda/v989/blobs/zImage
+TARGET_PREBUILT_KERNEL := device/onda/v989/kernel
 
 #Partitions table from Lollipop 
 BOARD_NAND_PAGE_SIZE := 4096

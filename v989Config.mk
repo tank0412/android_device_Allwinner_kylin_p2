@@ -5,7 +5,7 @@ PRODUCT_MODEL := ONDA_V989
 PRODUCT_PACKAGES += \
  	com.android.future.usb.accessory \
  	libnetcmdiface \
-     setup_fs
+        setup_fs
 
 PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \

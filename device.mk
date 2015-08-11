@@ -1,10 +1,6 @@
 LOCAL_PATH := device/onda/v989
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/onda/v989/blobs/zImage
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
+TARGET_PREBUILT_KERNEL := device/onda/v989/kernel
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
