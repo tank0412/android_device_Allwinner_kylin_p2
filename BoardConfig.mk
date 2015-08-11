@@ -5,6 +5,9 @@ TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 TARGET_BOARD_PLATFORM := kylin
+TARGET_BOOTLOADER_BOARD_NAME := exdroid
+
+BOARD_EGL_CFG := device/onda/v989/egl/egl.cfg
 
 #Partitions table from Lollipop 
 BOARD_NAND_PAGE_SIZE := 4096
