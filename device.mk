@@ -13,7 +13,6 @@ PRODUCT_CHARACTERISTICS := tablet
 # Ramdisk fstab / rc files
 PRODUCT_COPY_FILES += \
 $(LOCAL_PATH)/ramdisk/fstab.sun9i:root/fstab.sun9i \
-$(LOCAL_PATH)/ramdisk/init.common.rc:root/init.common.rc \
 $(LOCAL_PATH)/ramdisk/init.environ.rc:root/init.environ.rc \
 $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
 $(LOCAL_PATH)/ramdisk/init.recovery.sun9i.rc:root/init.recovery.sun9i.rc \
@@ -21,7 +20,6 @@ $(LOCAL_PATH)/ramdisk/init.sun9i.rc:root/init.sun9i.rc \
 $(LOCAL_PATH)/ramdisk/init.sun9i.usb.rc:root/init.sun9i.usb.rc \
 $(LOCAL_PATH)/ramdisk/init.trace.rc:root/init.trace.rc \
 $(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
-$(LOCAL_PATH)/ramdisk/init.zygote32.rc:root/init.zygote32.rc \
 $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc \
 $(LOCAL_PATH)/ramdisk/ueventd.sun9i.rc:root/ueventd.sun9i.rc 
 
@@ -32,12 +30,11 @@ $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.bluetooth_le.xml:syste
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-$(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-$(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+$(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 $(LOCAL_PATH)/frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-$(LOCAL_PATH)/frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml 
-
+$(LOCAL_PATH)/frameworks/native/data/etc/handheld_core_hardware:system/etc/permissions/handheld_core_hardware \
+$(LOCAL_PATH)/frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware

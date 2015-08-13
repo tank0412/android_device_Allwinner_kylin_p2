@@ -1,62 +1,25 @@
-import init.common.rc
 import init.sun9i.usb.rc
 
 on init
     # See storage config details at http://source.android.com/tech/storage/
-    mkdir /mnt/shell/emulated 0700 shell shell
-    mkdir /storage/emulated 0555 root root
+    mkdir /mnt/sdcard 0700 shell shell
+    mkdir /mnt/extsd 0700 shell shell
+    mkdir /mnt/usbhost 0700 shell shell
 
-    export EXTERNAL_STORAGE /storage/emulated/legacy
-    export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
-    export EMULATED_STORAGE_TARGET /storage/emulated
-
-    # Support legacy paths
-    symlink /storage/emulated/legacy /sdcard
-    symlink /storage/emulated/legacy /mnt/sdcard
-    symlink /storage/emulated/legacy /storage/sdcard0
-    symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-
-    mkdir /mnt/media_rw/extsd 0700 media_rw media_rw
-    mkdir /storage/extsd 0700 root root
-    export SECONDARY_STORAGE /storage/extsd
-    symlink /storage/extsd /mnt/extsd
-
-    mkdir /mnt/media_rw/usbhost 0700 media_rw media_rw
-    mkdir /storage/usbhost 0700 root root
-    symlink /storage/usbhost /mnt/usbhost
-
+    symlink /mnt/sdcard /sdcard
+    export EXTERNAL_STORAGE /mnt/sdcard
     mount debugfs debugfs /sys/kernel/debug
+    mkdir /databk 0700 root  system
 
-on post-fs
+on early-fs
+    mount_all /fstab.sun9i
+    insmod  /system/vendor/modules/disp.ko
+    insmod  /system/vendor/modules/lcd.ko
+    insmod  /system/vendor/modules/hdcp.ko
 
-on post-fs-data
-    mkdir /data/media 0770 media_rw media_rw
-    # Set indication (checked by vold) that we have finished this action
-    setprop vold.post_fs_data_done 1
-    # to force to start sdcard
-    class_start late_start
-
-	# This module write data to /data should insmod in post-fs-data
-	# due to encryption
-
-on charger
-    insmod disp.ko
-    insmod lcd.ko
-    class_start charger
-    write /sys/module/printk/parameters/console_suspend N
-    write /proc/sys/kernel/printk 0
-
-on boot
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-
-    chown system system /sys/kernel/autohotplug/enable
-    chmod 0660 /sys/kernel/autohotplug/enable
-
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/boot_lock
-    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/boot_lock
-
-    
+#gpu
+    insmod /system/vendor/modules/pvrsrvkm.ko
+    insmod /system/vendor/modules/dc_sunxi.ko
 
 #csi module
     insmod /system/vendor/modules/videobuf-core.ko
@@ -72,11 +35,30 @@ on boot
 
 #facedetection module
     insmod /system/vendor/modules/sunxi_fd.ko
-# sw-keyboard
+
+service pvrsrvctl /system/vendor/bin/pvrsrvctl --start --no-module
+	class core
+	user root
+	group root
+	oneshot
+
+on post-fs-data
+    mkdir /data/media 0770 media_rw media_rw
+
+on fs
+    # UDISK would be mounted as data partition when multiple user enabled.
+    format_userdata /dev/block/by-name/UDISK ONDA_MID
+
+on boot
+# use automatic detecttion insmod ctp & gsensor driver
 	insmod /system/vendor/modules/sw-device.ko
 
-    insmod /system/vendor/modules/mpu6500.ko
+	# for zram
+	write /sys/block/zram0/disksize 536870912
+	exec /system/bin/mkswap /dev/block/zram0
+	exec /system/bin/swapon /dev/block/zram0
 
+    insmod	/system/vendor/modules/mpu6500.ko
 # INV MA514
 # MA514
     chown system system /dev/iio:device0
@@ -218,7 +200,7 @@ on boot
     chmod 0660 /sys/bus/iio/devices/iio:device0/trigger/current_trigger
 # MA514 END
 
-# network
+# insmod network
     insmod /system/vendor/modules/bcmdhd.ko
     insmod /system/vendor/modules/bcm_btlpm.ko
     insmod /system/vendor/modules/usbnet.ko
@@ -228,16 +210,18 @@ on boot
     insmod /system/vendor/modules/rtl8150.ko
     insmod /system/vendor/modules/cdc_ether.ko
 
-# bluetooth
-    # UART device
-    chmod 0660 /dev/ttyS2
+# bcm bluetooth
+    # uart device
+    chmod 660 /dev/ttyS2
     chown bluetooth net_bt_stack /dev/ttyS2
+    mkdir /data/misc/bluedroid 770 bluetooth net_bt_stack
 
     # power up/down interface
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+    #write /sys/class/rfkill/rfkill0/state 0
 
     # bluetooth MAC address programming
     chown bluetooth net_bt_stack ro.bt.bdaddr_path
@@ -251,69 +235,27 @@ on boot
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
 
-on early-fs
-    insmod nand.ko
-    exec /sbin/busybox sh /sbin/init_parttion.sh
-    mount_all /fstab.sun9i
-	setprop ro.crypto.fuse_sdcard true
-    swapon_all /fstab.sun9i
+# rdaio init.rc
+    import init.sun9i.3gdongle.rc
+    #import init.sun9i.radio.rc
 
-	insmod /system/vendor/modules/disp.ko
-    insmod /system/vendor/modules/lcd.ko
-    insmod /system/vendor/modules/hdcp.ko
-
-# gpu
-    insmod /system/vendor/modules/pvrsrvkm.ko
-
-on fs
-    # UDISK would be mounted as data partition when multiple user enabled.
-    #format_userdata /dev/block/by-name/UDISK ASTAR
-
-service pvrsrvctl /system/vendor/bin/pvrsrvctl --start
-	class core
-	user root
-	group root
-	oneshot
-
-service sensors /sbin/busybox sh /system/bin/sensors.sh
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:sys.sensors=1
-    start sensors
-
-# virtual sdcard daemon running as media_rw (1023)
-service sdcard /system/bin/sdcard -u 1023 -g 1023 -l /data/media /mnt/shell/emulated
-    class late_start
-
-service fuse_extsd /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/extsd /storage/extsd
-    class late_start
-    disabled
-
-service fuse_usbhost /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usbhost /storage/usbhost
-    class late_start
-    disabled
-
+on property:sys.boot_completed=1
+    start u3gmonitor
+    
 # broadcom wifi service
-# 1 broadcom wifi sta service
-service wpa_supplicant /system/bin/wpa_supplicant \
+# 1 broadcom wifi bcm40181 bcm40183 station and softap
+service wpa_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-    #   user wifi
-    #   group wifi inet keystore
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
 
-# 2 broadcom wifi sta p2p concurrent service
-service p2p_supplicant /system/bin/wpa_supplicant \
+# 2 braodcom wifi sta p2p concurrent service
+service p2p_supplicant /system/bin/logwrapper /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
     -O/data/misc/wifi/sockets -N \
@@ -321,11 +263,8 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf \
     -puse_p2p_group_interface=1 -e/data/misc/wifi/entropy.bin \
     -g@android:wpa_wlan0
-    #   we will start as root and wpa_supplicant will switch to user wifi
-    #   after setting up the capabilities required for WEXT
-    #   user wifi
-    #   group wifi inet keystore
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot
+
