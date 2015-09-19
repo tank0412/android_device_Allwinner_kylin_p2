@@ -1,3 +1,2 @@
-LOCAL_PATH := device/onda/v989
 PRODUCT_MAKEFILES := \
-	$(LOCAL_PATH)/full_v989.mk
+    $(LOCAL_DIR)/device_kylin_mb976a9.mk

@@ -1,16 +1,26 @@
-$(call inherit-product, device/onda/v989/full_v989.mk)
+# Release name
+PRODUCT_RELEASE_NAME := kylin_mb976a9
+
+# Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
-DEVICE_PACKAGE_OVERLAYS += device/onda/v989/overlay
+#DEVICE_PACKAGE_OVERLAYS += device/onda/v989/overlay
 
-DEVICE_RESOLUTION := 1536x2048
-TARGET_SCREEN_HEIGHT := 2048
-TARGET_SCREEN_WIDTH := 1536
+# Inherit device configuration
+$(call inherit-product, device/ONDA/kylin_mb976a9/device_kylin_mb976a9.mk)
 
-PRODUCT_NAME := cm_v989
-PRODUCT_DEVICE := v989
-PRODUCT_BRAND := Onda
-PRODUCT_MODEL := ONDA_V989
-PRODUCT_MANUFACTURER := onda
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := kylin_mb976a9
+PRODUCT_NAME := cm_kylin_mb976a9
+PRODUCT_BRAND := ONDA
+#PRODUCT_MODEL := kylin_mb976a9
+PRODUCT_MANUFACTURER := ONDA
 
+PRODUCT_CHARACTERISTICS := tablet
+#PRODUCT_DEVICE := kylin-mb976a9
+PRODUCT_MODEL := ONDA V989
 
+#Device resolution
+#DEVICE_RESOLUTION := 1536x2048
+#TARGET_SCREEN_HEIGHT := 2048
+#TARGET_SCREEN_WIDTH := 1536
