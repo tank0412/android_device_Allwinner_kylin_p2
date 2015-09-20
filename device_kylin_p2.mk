@@ -179,10 +179,10 @@ PRODUCT_COPY_FILES += \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.webview:system/etc/permissions/android.software.webview \
+	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.mediadrm.signer:system/etc/permissions/com.android.mediadrm.signer \
+	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
