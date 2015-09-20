@@ -169,7 +169,7 @@ PRODUCT_COPY_FILES += \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \ 
+	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
@@ -177,7 +177,8 @@ PRODUCT_COPY_FILES += \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.webview:system/etc/permissions/android.software.webview \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
