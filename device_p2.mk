@@ -1,8 +1,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-$(call inherit-product-if-exists, vendor/ONDA/kylin_mb976a9/kylin_mb976a9.mk)
+$(call inherit-product-if-exists, vendor/ONDA/kylin_p2/kylin_p2.mk)
 
-LOCAL_PATH := device/ONDA/kylin_mb976a9
+LOCAL_PATH := device/ONDA/kylin_p2
 
 #Prebuilt kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
@@ -29,8 +29,8 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_kylin_mb976a9
-PRODUCT_DEVICE := kylin_mb976a9
+PRODUCT_NAME := full_kylin_p2
+PRODUCT_DEVICE := kylin_p2
 
 #KylinCommon
 DEVICE_PACKAGE_OVERLAYS := \
@@ -77,8 +77,8 @@ DEVICE_PACKAGE_OVERLAYS := \
 #	audio.r_submix.default 
 	
 PRODUCT_COPY_FILES += \
-	vendor/ONDA/kylin_mb976a9/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-	vendor/ONDA/kylin_mb976a9/system/etc/phone_volume.conf:system/etc/phone_volume.conf
+	vendor/ONDA/kylin_p2/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+	vendor/ONDA/kylin_p2/system/etc/phone_volume.conf:system/etc/phone_volume.conf
 
 # camera
 #PRODUCT_PACKAGES += \
@@ -126,11 +126,11 @@ PRODUCT_COPY_FILES += \
 #	libwvdrmengine
 
 PRODUCT_COPY_FILES += \
-	device/ONDA/kylin_mb976a9/media_codecs.xml:system/etc/media_codecs.xml
+	device/ONDA/kylin_p2/media_codecs.xml:system/etc/media_codecs.xml
 
 # sensor - In the vendor folder
 #PRODUCT_COPY_FILES += \
-#    device/ONDA/kylin_mb976a9/sensors.sh:system/bin/sensors.sh
+#    device/ONDA/kylin_p2/sensors.sh:system/bin/sensors.sh
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -138,12 +138,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #Recovery
 #PRODUCT_COPY_FILES += \
-#    vendor/ONDA/kylin_mb976a9/recovery/nand.ko:root/nand.ko \
-#    vendor/ONDA/kylin_mb976a9/recovery/sw-device.ko:root/sw-device.ko \
-#    vendor/ONDA/kylin_mb976a9/recovery/disp.ko:root/disp.ko \
-#    vendor/ONDA/kylin_mb976a9/recovery/lcd.ko:root/lcd.ko \
-#    vendor/ONDA/kylin_mb976a9/recovery/hdcp.ko:root/hdcp.ko \
-#    vendor/ONDA/kylin_mb976a9/recovery/gt9xxnew_ts.ko:root/gt9xxnew_ts.ko
+#    vendor/ONDA/kylin_p2/recovery/nand.ko:root/nand.ko \
+#    vendor/ONDA/kylin_p2/recovery/sw-device.ko:root/sw-device.ko \
+#    vendor/ONDA/kylin_p2/recovery/disp.ko:root/disp.ko \
+#    vendor/ONDA/kylin_p2/recovery/lcd.ko:root/lcd.ko \
+#    vendor/ONDA/kylin_p2/recovery/hdcp.ko:root/hdcp.ko \
+#    vendor/ONDA/kylin_p2/recovery/gt9xxnew_ts.ko:root/gt9xxnew_ts.ko
 
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/recovery/charger:root/charger \
@@ -165,28 +165,28 @@ PRODUCT_COPY_FILES += \
 
 #Modules
 PRODUCT_COPY_FILES += \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \ 
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/android.software.webview:system/etc/permissions/android.software.webview \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.android.mediadrm.signer:system/etc/permissions/com.android.mediadrm.signer \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
-	vendor/ONDA/kylin_mb976a9/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \ 
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \	vendor/ONDA/kylin_p2/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/android.software.webview:system/etc/permissions/android.software.webview \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.android.mediadrm.signer:system/etc/permissions/com.android.mediadrm.signer \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
+	vendor/ONDA/kylin_p2/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 #DO NOT DELETE!!!
 PRODUCT_COPY_FILES += \
@@ -228,7 +228,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.product.locale.language=en \
     ro.product.locale.region=US
 
-$(call inherit-product-if-exists, device/ONDA/kylin_mb976a9/modules/modules.mk)
+$(call inherit-product-if-exists, device/ONDA/kylin_p2/modules/modules.mk)
 
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \

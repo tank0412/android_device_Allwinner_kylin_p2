@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/ONDA/kylin_mb976a9/BoardConfigVendor.mk
+-include vendor/ONDA/kylin_p2/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -24,7 +24,7 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
 
-BOARD_KERNEL_CMDLINE := console=ttyS0,115200 root=/dev/mmcblk0p7 init=/init vmalloc=384M coherent_pool=8M cma_reserve=640M loglevel=4 partitions=bootloader@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:system@mmcblk0p7:data@mmcblk0p8:misc@mmcblk0p9:recovery@mmcblk0p10:cache@mmcblk0p11:metadata@mmcblk0p12:private@mmcblk0p13:UDISK@mmcblk0p1 boot_type=2 config_size=59044
+BOARD_KERNEL_CMDLINE := 
 
 BOARD_KERNEL_BASE := 0x20000000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -32,9 +32,9 @@ BOARD_KERNEL_PAGESIZE := 2048
 DISABLE_DEXPREOPT := true
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
-# Using partitions table from CleanONDA210&213
+# Using partitions table from stock Lollipop
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 792618598 #755.9 MB
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 8482560409 #7.9 GB
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27702539059 #25.8 GB
 BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432
@@ -43,10 +43,10 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-TARGET_KERNEL_SOURCE := kernel/ONDA/kylin_mb976a9
+TARGET_KERNEL_SOURCE := kernel/ONDA/kylin_p2
 TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
 
-TARGET_PREBUILT_KERNEL := device/ONDA/kylin_mb976a9/kernel
+TARGET_PREBUILT_KERNEL := device/ONDA/kylin_p2/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -67,7 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #CUSTOM_KERNEL_TOUCHPANEL := gt9xxnew_ts
 
 #Video
-BOARD_EGL_CFG := vendor/ONDA/kylin_mb976a9/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := vendor/ONDA/kylin_p2/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 
 #Camera
@@ -75,7 +75,7 @@ USE_CAMERA_STUB := true
 
 #Policies
 BOARD_SEPOLICY_DIRS := \
-	device/ONDA/kylin_mb976a9/sepolicy
+	device/ONDA/kylin_p2/sepolicy
 
 BOARD_SEPOLICY_UNION := \
 	app.te \
@@ -108,7 +108,7 @@ BOARD_SEPOLICY_UNION := \
 
 #Recovery
 SW_BOARD_TOUCH_RECOVERY := true
-TARGET_RECOVERY_FSTAB = device/ONDA/kylin_mb976a9/recovery/fstab.kylin_mb976a
+TARGET_RECOVERY_FSTAB = device/ONDA/kylin_p2/recovery/fstab.sun9i
 RECOVERY_FSTAB_VERSION = 2
 
 #CWM
@@ -119,7 +119,7 @@ BOARD_HAS_SDCARD_INTERNAL := true
 BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/by-name/UDISK # /sdcard vfat /dev/block/by-name/UDISK
 BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p1	     	 # /sdext vfat /dev/block/mmcblk1p1
 
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := kylin_mb976a9/recovery_keys.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := kylin_p2/recovery_keys.c
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 PRODUCT_PROPERTY_OVERRIDES += \

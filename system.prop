@@ -1,5 +1,5 @@
 #
-# system.prop for kylin_mb976a9
+# system.prop for kylin_p2
 #
 
 
@@ -26,9 +26,6 @@ ro.sys.cputype=UltraOcta-A80
 debug.hwc.showfps=0
 ro.config.max_starting_bg=10
 drm.service.enabled=true
-ro.sw.embeded.telephony=false
-rild.libargs=-d/dev/ttyUSB2
-rild.libpath=libsoftwinner-ril-4.4.so
 ro.sys.adaptive_memory=0
 dalvik.vm.heapsize=512m
 dalvik.vm.heapstartsize=8m
