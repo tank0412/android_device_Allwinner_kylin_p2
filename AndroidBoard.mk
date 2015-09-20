@@ -5,4 +5,4 @@ include $(CLEAR_VARS)
 ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
 
 # include the non-open-source counterpart to this file
--include vendor/ONDA/kylin_mb976a9/AndroidBoardVendor.mk
+-include vendor/Allwinner/kylin_p2/AndroidBoardVendor.mk

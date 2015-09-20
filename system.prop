@@ -40,7 +40,6 @@ ro.hwui.path_cache_size=12
 ro.hwui.shap_cache_size=6
 ro.hwui.drop_shadow_cache_size=6
 ro.hwui.r_buffer_cache_size=6
-ro.udisk.lable=ONDA_MID
 ro.property.tabletUI=false
 persist.sf.lcd_density=320
 ro.property.fontScale=1.0

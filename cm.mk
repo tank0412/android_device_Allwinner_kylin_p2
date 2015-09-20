@@ -7,18 +7,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 #DEVICE_PACKAGE_OVERLAYS += device/onda/v989/overlay
 
 # Inherit device configuration
-$(call inherit-product, device/ONDA/kylin_mb976a9/device_kylin_p2.mk)
+$(call inherit-product, device/Allwinner/kylin_p2/device_kylin_p2.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := kylin_p2
 PRODUCT_NAME := cm_kylin_p2
-PRODUCT_BRAND := ONDA
+PRODUCT_BRAND := Allwinner
 #PRODUCT_MODEL := kylin_p2
-PRODUCT_MANUFACTURER := ONDA
+PRODUCT_MANUFACTURER := Allwinner
 
 PRODUCT_CHARACTERISTICS := tablet
 #PRODUCT_DEVICE := kylin-p2
-PRODUCT_MODEL := ONDA V989
+PRODUCT_MODEL := UltraOcta A80 p2
 
 #Device resolution
 #DEVICE_RESOLUTION := 1536x2048

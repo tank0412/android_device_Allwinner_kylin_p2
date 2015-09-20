@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/ONDA/kylin_p2/BoardConfigVendor.mk
+-include vendor/Allwinner/kylin_p2/BoardConfigVendor.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -43,10 +43,10 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-TARGET_KERNEL_SOURCE := kernel/ONDA/kylin_p2
+TARGET_KERNEL_SOURCE := kernel/Allwinner/kylin_p2
 TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
 
-TARGET_PREBUILT_KERNEL := device/ONDA/kylin_p2/kernel
+TARGET_PREBUILT_KERNEL := device/Allwinner/kylin_p2/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -67,7 +67,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #CUSTOM_KERNEL_TOUCHPANEL := gt9xxnew_ts
 
 #Video
-BOARD_EGL_CFG := vendor/ONDA/kylin_p2/system/lib/egl/egl.cfg
+BOARD_EGL_CFG := vendor/Allwinner/kylin_p2/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 
 #Camera
@@ -75,7 +75,7 @@ USE_CAMERA_STUB := true
 
 #Policies
 BOARD_SEPOLICY_DIRS := \
-	device/ONDA/kylin_p2/sepolicy
+	device/Allwinner/kylin_p2/sepolicy
 
 BOARD_SEPOLICY_UNION := \
 	app.te \
@@ -108,7 +108,7 @@ BOARD_SEPOLICY_UNION := \
 
 #Recovery
 SW_BOARD_TOUCH_RECOVERY := true
-TARGET_RECOVERY_FSTAB = device/ONDA/kylin_p2/recovery/fstab.sun9i
+TARGET_RECOVERY_FSTAB = device/Allwinner/kylin_p2/recovery/fstab.sun9i
 RECOVERY_FSTAB_VERSION = 2
 
 #CWM
