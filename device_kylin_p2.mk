@@ -172,7 +172,7 @@ PRODUCT_COPY_FILES += \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xmll:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
