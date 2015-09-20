@@ -74,10 +74,10 @@ USE_OPENGL_RENDERER := true
 USE_CAMERA_STUB := true
 
 #Policies
-BOARD_SEPOLICY_DIRS := \
+#BOARD_SEPOLICY_DIRS := \
 	device/Allwinner/kylin_p2/sepolicy
 
-BOARD_SEPOLICY_UNION := \
+#BOARD_SEPOLICY_UNION := \
 	app.te \
 	device.te \
 	domain.te \
