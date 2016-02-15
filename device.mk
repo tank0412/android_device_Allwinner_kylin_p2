@@ -66,19 +66,19 @@ DEVICE_PACKAGE_OVERLAYS := \
 #	make_ext4fs
 
 # usb
-#PRODUCT_PACKAGES += \
-#	com.android.future.usb.accessory
+PRODUCT_PACKAGES += \
+	com.android.future.usb.accessory
 
 # audio
-#PRODUCT_PACKAGES += \
-#	audio.primary.kylin \
-#	audio.a2dp.default \
-#	audio.usb.default  \
-#	audio.r_submix.default 
+PRODUCT_PACKAGES += \
+	audio.primary.kylin \
+	audio.a2dp.default \
+	audio.usb.default  \
+	audio.r_submix.default 
 	
 PRODUCT_COPY_FILES += \
-	vendor/Allwinner/kylin_p2/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
-	vendor/Allwinner/kylin_p2/system/etc/phone_volume.conf:system/etc/phone_volume.conf
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/audio_policy.conf:system/etc/audio_policy.conf \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/phone_volume.conf:system/etc/phone_volume.conf
 
 # camera
 #PRODUCT_PACKAGES += \
@@ -165,29 +165,29 @@ PRODUCT_COPY_FILES += \
 
 #Modules
 PRODUCT_COPY_FILES += \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
-	vendor/Allwinner/kylin_p2/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.google.android.media.effects.xml:system/etc/permissions/com.google.android.media.effects.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.google.widevine.software.drm.xml:system/etc/permissions/com.google.widevine.software.drm.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
+	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 #DO NOT DELETE!!!
 PRODUCT_COPY_FILES += \

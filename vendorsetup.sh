@@ -21,3 +21,6 @@
 # function: add_lunch_combo generic-eng
 
 add_lunch_combo aosp_kylin_p2-userdebug
+add_lunch_combo aosp_kylin_p2-user
+add_lunch_combo aosp_kylin_p2-eng
+

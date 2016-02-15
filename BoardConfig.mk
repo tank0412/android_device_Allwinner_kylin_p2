@@ -1,5 +1,5 @@
 # inherit from the proprietary version
--include vendor/Allwinner/kylin_p2/BoardConfigVendor.mk
+-include vendor/Allwinner/kylin_p2/kylin_p2-vendor-blobs.mk
 
 TARGET_ARCH := arm
 TARGET_NO_BOOTLOADER := true
@@ -22,6 +22,8 @@ BOARD_EGL_NEEDS_LEGACY_FB := true
 # Workaround for no SYNC support
 TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 
+BOARD_EGL_CFG := device/Allwinner/kylin_p2/configs/egl.cfg
+
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
 
 BOARD_KERNEL_CMDLINE := 
@@ -43,8 +45,8 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-TARGET_KERNEL_SOURCE := kernel/Allwinner/kylin_p2
-TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
+#TARGET_KERNEL_SOURCE := kernel/Allwinner/kylin_p2
+#TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
 
 TARGET_PREBUILT_KERNEL := device/Allwinner/kylin_p2/kernel
 
@@ -67,7 +69,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #CUSTOM_KERNEL_TOUCHPANEL := gt9xxnew_ts
 
 #Video
-BOARD_EGL_CFG := vendor/Allwinner/kylin_p2/system/lib/egl/egl.cfg
 USE_OPENGL_RENDERER := true
 
 #Camera
@@ -107,20 +108,20 @@ USE_CAMERA_STUB := true
 #	zygote.te
 
 #Recovery
-SW_BOARD_TOUCH_RECOVERY := true
-TARGET_RECOVERY_FSTAB = device/Allwinner/kylin_p2/recovery/fstab.sun9i
-RECOVERY_FSTAB_VERSION = 2
+#SW_BOARD_TOUCH_RECOVERY := true
+#TARGET_RECOVERY_FSTAB = device/Allwinner/kylin_p2/recovery/fstab.sun9i
+#RECOVERY_FSTAB_VERSION = 2
 
 #CWM
-RECOVERY_SDCARD_ON_DATA := false
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
-BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/by-name/UDISK  # /sdcard vfat /dev/block/by-name/UDISK
-BOARD_HAS_SDCARD_INTERNAL := true
-BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/by-name/UDISK # /sdcard vfat /dev/block/by-name/UDISK
-BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p1	     	 # /sdext vfat /dev/block/mmcblk1p1
+#RECOVERY_SDCARD_ON_DATA := false
+#BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+#BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/by-name/UDISK  # /sdcard vfat /dev/block/by-name/UDISK
+#BOARD_HAS_SDCARD_INTERNAL := true
+#BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/by-name/UDISK # /sdcard vfat /dev/block/by-name/UDISK
+#BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p1	     	 # /sdext vfat /dev/block/mmcblk1p1
 
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := kylin_p2/recovery_keys.c
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := kylin_p2/recovery_keys.c
+#BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.service.adb.enable=1 \
