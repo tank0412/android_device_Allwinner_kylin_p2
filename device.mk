@@ -17,7 +17,7 @@ PRODUCT_COPY_FILES += \
 #######
 #$(call inherit-product, build/target/product/full.mk)
 #######
-$(call inherit-product, build/target/product/full_base.mk)
+#$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 #######
 #$(call inherit-product, build/target/product/full_base.mk)
 #$(call inherit-product, build/target/board/generic/device.mk)
@@ -37,13 +37,13 @@ DEVICE_PACKAGE_OVERLAYS := \
 	$(LOCAL_PATH)/overlay
 #	$(DEVICE_PACKAGE_OVERLAYS)
 
-#PRODUCT_PACKAGES += \
-#	com.android.future.usb.accessory \
-#	libnetcmdiface \
-#	Stk \
-#	static_busybox \
-#	make_ext4fs \
-#	setup_fs
+PRODUCT_PACKAGES += \
+	com.android.future.usb.accessory \
+	libnetcmdiface \
+	Stk \
+	static_busybox \
+	make_ext4fs \
+	setup_fs
 
 # kylin-common
 #PRODUCT_PACKAGES += \
@@ -65,9 +65,6 @@ DEVICE_PACKAGE_OVERLAYS := \
 #	libext2_e2p \
 #	make_ext4fs
 
-# usb
-PRODUCT_PACKAGES += \
-	com.android.future.usb.accessory
 
 # audio
 PRODUCT_PACKAGES += \
