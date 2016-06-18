@@ -14,8 +14,8 @@ TARGET_BOARD_PLATFORM := kylin
 TARGET_BOOTLOADER_BOARD_NAME := exdroid
 TARGET_USES_ION := true
 
-TARGET_NO_KERNEL := false
-TARGET_NO_RECOVERY := false
+TARGET_NO_KERNEL := true
+TARGET_NO_RECOVERY := true
 
 BOARD_EGL_CFG := device/Allwinner/kylin_p2/configs/egl.cfg
 
