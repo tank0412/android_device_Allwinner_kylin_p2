@@ -146,7 +146,6 @@
         <item>333</item>
         <item>353</item>
     </string-array>
-    </string-array>
     <string-array name="config_telephonyHardware">
         <item>0,modem,0,0,0,1,1,1</item>
         <item>1,sim,0,modem</item>

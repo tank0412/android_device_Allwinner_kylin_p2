@@ -176,7 +176,7 @@ PRODUCT_COPY_FILES += \
 	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
 #DO NOT DELETE!!!
-PRODUCT_COPY_FILES += \
+#PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/initlogo.rle:root/initlogo.rle
 
 #Overrides
