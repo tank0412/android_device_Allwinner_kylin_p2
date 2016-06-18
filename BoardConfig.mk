@@ -2,34 +2,22 @@
 -include vendor/Allwinner/kylin_p2/kylin_p2-vendor-blobs.mk
 
 TARGET_ARCH := arm
-TARGET_NO_BOOTLOADER := true
-#TARGET_NO_KERNEL := true
-#BUILD_KERNEL_MODULES := false
-TARGET_NO_RECOVERY := false
-TARGET_BOARD_PLATFORM := kylin
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a15
 TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
+BOARD_USES_SECURE_SERVICES := true
+TARGET_USE_NEON_OPTIMIZATION := true
+TARGET_ARCH_LOWMEM := false
+TARGET_BOARD_PLATFORM := kylin
+TARGET_BOOTLOADER_BOARD_NAME := exdroid
 TARGET_USES_ION := true
-TARGET_USES_NEON_OPTIMIZATION := true
-TARGET_GLOBAL_CFLAGS += -mtune=cortex-a15 -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a15 -mfpu=neon -mfloat-abi=softfp
-ENABLE_WEBGL := true
-BOARD_EGL_NEEDS_LEGACY_FB := true
-# Workaround for no SYNC support
-TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
+
+TARGET_NO_KERNEL := true
+TARGET_NO_RECOVERY := true
 
 BOARD_EGL_CFG := device/Allwinner/kylin_p2/configs/egl.cfg
-
-TARGET_BOOTLOADER_BOARD_NAME := exdroid
-
-BOARD_KERNEL_CMDLINE := 
-
-BOARD_KERNEL_BASE := 0x20000000
-BOARD_KERNEL_PAGESIZE := 2048
 
 DISABLE_DEXPREOPT := true
 BOARD_USE_LEGACY_TOUCHSCREEN := true
@@ -48,7 +36,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 #TARGET_KERNEL_SOURCE := kernel/Allwinner/kylin_p2
 #TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
 
-TARGET_PREBUILT_KERNEL := device/Allwinner/kylin_p2/kernel
+#TARGET_PREBUILT_KERNEL := device/Allwinner/kylin_p2/kernel
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
@@ -59,7 +47,11 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
+# audio & camera & cedarx
 CEDARX_CHIP_VERSION := F39
+
+# widevine
+BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.sys.vold.switchexternal=1
