@@ -1,6 +1,3 @@
-# inherit from the proprietary version
--include vendor/Allwinner/kylin_p2/kylin_p2-vendor-blobs.mk
-
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -33,11 +30,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_SDCARD_INTERNAL := true
 TARGET_USERIMAGES_USE_EXT4 := true
 
-#TARGET_KERNEL_SOURCE := kernel/Allwinner/kylin_p2
-#TARGET_KERNEL_CONFIG := sun9iw1p1smp_android_defconfig
-
-#TARGET_PREBUILT_KERNEL := device/Allwinner/kylin_p2/kernel
-
 BOARD_HAS_NO_SELECT_BUTTON := true
 
 BOARD_HAS_BLUETOOTH := true
@@ -66,38 +58,6 @@ USE_OPENGL_RENDERER := true
 #Camera
 USE_CAMERA_STUB := true
 
-#Policies
-#BOARD_SEPOLICY_DIRS := \
-	device/Allwinner/kylin_p2/sepolicy
-
-#BOARD_SEPOLICY_UNION := \
-	app.te \
-	device.te \
-	domain.te \
-	installd.te \
-	mediaserver.te \
-	mount.te \
-	surfaceflinger.te \
-	system.te \
-	vold.te \
-	zygote.te
-
-#BOARD_SEPOLICY_UNION := \
-#	app.te \
-#	device.te \
-#	domain.te \
-#	file_contexts \
-#	genfs_contexts \
-#	healthd.te \
-#	installd.te \
-#	mediaserver.te \
-#	mount.te \
-#	netd.te \
-#	surfaceflinger.te \
-#	system.te \
-#	untrusted_app.te \
-#	vold.te \
-#	zygote.te
 
 #Recovery
 #SW_BOARD_TOUCH_RECOVERY := true
@@ -127,4 +87,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #TW_INTERNAL_STORAGE_MOUNT_POINT := "sdcard0"
 #TW_EXTERNAL_STORAGE_PATH := "/external_sd"
 #TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+
+# inherit from the proprietary version
+-include vendor/Allwinner/kylin_p2/kylin_p2-vendor-blobs.mk
+
 

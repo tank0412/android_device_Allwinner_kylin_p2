@@ -1,3 +1,0 @@
-#type mali_device, dev_type, mlstrustedobject;
-type gpu_device, dev_type, mlstrustedobject;
-

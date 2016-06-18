@@ -142,20 +142,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #    vendor/Allwinner/kylin_p2/recovery/hdcp.ko:root/hdcp.ko \
 #    vendor/Allwinner/kylin_p2/recovery/gt9xxnew_ts.ko:root/gt9xxnew_ts.ko
 
+#Ramdisk
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/charger:root/charger \
-	$(LOCAL_PATH)/recovery/fstab.sun9i:root/fstab.sun9i \
-	$(LOCAL_PATH)/recovery/init.sun9i.rc:root/init.sun9i.rc \
-	$(LOCAL_PATH)/recovery/init.recovery.sun9i.rc:root/init.recovery.sun9i.rc \
-	$(LOCAL_PATH)/recovery/ueventd.sun9i.rc:root/ueventd.sun9i.rc \
-	$(LOCAL_PATH)/recovery/init.sun9i.usb.rc:root/init.sun9i.usb.rc
-	
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/init_partition.sh:root/sbin/init_partition.sh \
-	$(LOCAL_PATH)/recovery/Extra/busybox:root/sbin/busybox
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/recovery/Extra/file_contexts:root/file_contexts
+    $(call find-copy-subdir-files,*,device/Allwinner/kylin_p2/rootdir,root)
 
 #PRODUCT_PACKAGES += \
 #	com.android.future.usb.accessory
@@ -219,12 +208,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.product.firmware=v0.1
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.timezone=Europe/Moscow \
-    persist.sys.language=en \
-    persist.sys.country=US \
-    ro.product.locale.language=en \
-    ro.product.locale.region=US
 
 $(call inherit-product-if-exists, device/Allwinner/kylin_p2/modules/modules.mk)
 
