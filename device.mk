@@ -130,9 +130,6 @@ PRODUCT_COPY_FILES += \
 #    device/Allwinner/kylin_p2/sensors.sh:system/bin/sensors.sh
 
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sys.cputype=UltraOcta-A80
-
 #Recovery
 #PRODUCT_COPY_FILES += \
 #    vendor/Allwinner/kylin_p2/recovery/nand.ko:root/nand.ko \
@@ -179,35 +176,6 @@ PRODUCT_COPY_FILES += \
 #PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/initlogo.rle:root/initlogo.rle
 
-#Overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapstartsize=8m \
-    dalvik.vm.heapgrowthlimit=192m \
-    dalvik.vm.heaptargetutilization=0.75 \
-    dalvik.vm.heapminfree=2m \
-    dalvik.vm.heapmaxfree=8m \
-    ro.zygote.disable_gl_preload=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp,adb 
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sf.lcd_density=320 \
-    ro.property.fontScale=1.0 \
-    ro.sf.hwrotation=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hwui.texture_cache_size=120 \
-	ro.hwui.layer_cache_size=120 \
-	ro.hwui.path_cache_size=12 \
-	ro.hwui.shap_cache_size=6 \
-	ro.hwui.drop_shadow_cache_size=6 \
-	ro.hwui.r_buffer_cache_size=6
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.product.firmware=v0.1
-
 
 $(call inherit-product-if-exists, device/Allwinner/kylin_p2/modules/modules.mk)
 
@@ -217,4 +185,8 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 PRODUCT_PACKAGES += \
     Launcher3
+
+#libion 
+PRODUCT_PACKAGES += \
+    libion
 

@@ -1,3 +1,4 @@
+#CPU info
 TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -17,9 +18,11 @@ TARGET_NO_RECOVERY := false
 BOARD_EGL_CFG := device/Allwinner/kylin_p2/configs/egl.cfg
 
 DISABLE_DEXPREOPT := true
+
+#We do not have source of touch screen driver
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
-# Using partitions table from stock Lollipop
+#Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 792618598 #755.9 MB
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 27702539059 #25.8 GB
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -32,10 +35,15 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 BOARD_HAS_NO_SELECT_BUTTON := true
 
+#Bluetooth
 BOARD_HAS_BLUETOOTH := true
+
+# NFC
+BOARD_HAVE_NFC := false
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
 
+#Ext sd
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 
@@ -44,9 +52,6 @@ CEDARX_CHIP_VERSION := F39
 
 # widevine
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.sys.vold.switchexternal=1
 
 #CUSTOM_KERNEL_ALSPS = gt9xx
 #CUSTOM_KERNEL_TOUCHPANEL := GT9XX
@@ -58,6 +63,12 @@ USE_OPENGL_RENDERER := true
 #Camera
 USE_CAMERA_STUB := true
 
+#OTA
+BLOCK_BASED_OTA :=false
+
+#Overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.kernel.android.checkjni=0
 
 #Recovery
 #SW_BOARD_TOUCH_RECOVERY := true
@@ -75,9 +86,6 @@ USE_CAMERA_STUB := true
 #BOARD_CUSTOM_RECOVERY_KEYMAPPING := kylin_p2/recovery_keys.c
 #BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
 
-PRODUCT_PROPERTY_OVERRIDES += \
-	persist.service.adb.enable=1 \
-	qemu.hw.mainkeys=0
 
 # TWRP
 #DEVICE_RESOLUTION := 1536x2048
