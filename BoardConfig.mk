@@ -67,6 +67,13 @@ USE_CAMERA_STUB := true
 BLOCK_BASED_OTA :=false
 TARGET_USES_BLOCK_BASED_OTA=false
 
+#Audio
+BOARD_USES_GENERIC_AUDIO := true
+
+#Bluetooth
+BOARD_HAVE_BLUETOOTH := true
+
+
 #Overrides
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.checkjni=0
@@ -99,5 +106,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # inherit from the proprietary version
 -include vendor/Allwinner/kylin_p2/kylin_p2-vendor-blobs.mk
-
 

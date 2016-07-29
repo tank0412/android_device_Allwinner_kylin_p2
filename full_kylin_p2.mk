@@ -1,8 +1,9 @@
 # Release name
 PRODUCT_RELEASE_NAME := kylin_p2
 
-# Inherit some common AOSP stuff.
+# Inherit some common CM stuff.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 #DEVICE_PACKAGE_OVERLAYS += device/onda/v989/overlay
 
 # Inherit device configuration

@@ -186,7 +186,14 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     Launcher3
 
+# Wi-Fi
+PRODUCT_PACKAGES += \
+	libwpa_client \
+	hostapd \
+	dhcpcd.conf \
+	wpa_supplicant \
+	wpa_supplicant.conf
+
 #libion 
 PRODUCT_PACKAGES += \
     libion
-
