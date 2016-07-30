@@ -15,7 +15,7 @@ TARGET_USES_ION := true
 TARGET_NO_KERNEL := false
 TARGET_NO_RECOVERY := false
 
-BOARD_EGL_CFG := device/Allwinner/kylin_p2/configs/egl.cfg
+BOARD_EGL_CFG := device/Allwinner/kylin_p2/egl/egl.cfg
 
 DISABLE_DEXPREOPT := true
 
@@ -70,50 +70,10 @@ TARGET_USES_BLOCK_BASED_OTA=false
 #Audio
 BOARD_USES_GENERIC_AUDIO := true
 
-#Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-
 
 #Overrides
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.checkjni=0
-
-# Selinux
-BOARD_SEPOLICY_DIRS += \
-    device/Allwinner/kylin_p2/selinux
-
-BOARD_SEPOLICY_UNION += \
-    bluetooth.te \
-    device.te \
-    dhcp.te \
-    domain.te \
-    drmserver.te \
-    dumpstate.te \
-    file.te \
-    file_contexts \
-    healthd.te \
-    init.te \
-    init_shell.te \
-    mac_update.te \
-    mediaserver.te \
-    mount.te \
-    netd.te \
-    recovery.te \
-    rild.te \
-    sdcardd.te \
-    sensors.te \
-    shell.te \
-    surfaceflinger.te \
-    system_app.te \
-    system_server.te \
-    ueventd.te \
-    unconfined.te \
-    untrusted_app.te \
-    vold.te \
-    mngblt.te \
-    wpa_supplicant.te \
-    wpa.te \
-    zygote.te \
 
 #Recovery
 #SW_BOARD_TOUCH_RECOVERY := true

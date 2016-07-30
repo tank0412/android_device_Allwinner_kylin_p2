@@ -1,3 +1,0 @@
-# wpa_supplicant
-allow wpa devpts:chr_file rw_file_perms;
-allow wpa init:unix_dgram_socket rw_socket_perms;
