@@ -76,6 +76,15 @@ BOARD_USES_GENERIC_AUDIO := true
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.kernel.android.checkjni=0
 
+#Wi-FI
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER        := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE           := bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
+
 #Recovery
 #SW_BOARD_TOUCH_RECOVERY := true
 #TARGET_RECOVERY_FSTAB = device/Allwinner/kylin_p2/recovery/fstab.sun9i
