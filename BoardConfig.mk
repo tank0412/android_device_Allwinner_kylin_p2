@@ -37,6 +37,7 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 #Bluetooth
 BOARD_HAS_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 # NFC
 BOARD_HAVE_NFC := false
