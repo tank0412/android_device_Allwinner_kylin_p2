@@ -109,28 +109,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,device/Allwinner/kylin_p2/rootdir,root)
 
-#Permissions
+# Permissions
 PRODUCT_COPY_FILES += \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/android.software.webview.xml:system/etc/permissions/android.software.webview.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.location.provider.xml:system/etc/permissions/com.android.location.provider.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.media.remotedisplay.xml:system/etc/permissions/com.android.media.remotedisplay.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/com.android.mediadrm.signer.xml:system/etc/permissions/com.android.mediadrm.signer.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/platform.xml:system/etc/permissions/platform.xml \
-	vendor/Allwinner/kylin_p2/proprietary/system/etc/permissions/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+    frameworks/native/data/etc/android.hardware.camera.autofocus.xml:system/etc/permissions/android.hardware.camera.autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml\
+    frameworks/native/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
+    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
+    frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/native/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
+    frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 #DO NOT DELETE!!!
 #PRODUCT_COPY_FILES += \

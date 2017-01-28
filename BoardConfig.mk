@@ -38,6 +38,9 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 #Bluetooth
 BOARD_HAS_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_BLUETOOTH_NAME := ap6210
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/Allwinner/kylin_p2/bluetooth
+TARGET_USE_BOOSTUP_OPZ := true
 
 # NFC
 BOARD_HAVE_NFC := false
@@ -68,9 +71,6 @@ USE_CAMERA_STUB := true
 BLOCK_BASED_OTA :=false
 TARGET_USES_BLOCK_BASED_OTA=false
 
-#Audio
-BOARD_USES_GENERIC_AUDIO := true
-
 
 #Overrides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -84,6 +84,7 @@ BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_bcmdhd
 BOARD_WLAN_DEVICE           := bcmdhd
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
+BOARD_USR_WIFI := ap6210
 
 #Recovery
 #SW_BOARD_TOUCH_RECOVERY := true
