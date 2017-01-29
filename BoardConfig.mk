@@ -23,7 +23,7 @@ DISABLE_DEXPREOPT := true
 BOARD_USE_LEGACY_TOUCHSCREEN := true
 
 #CMDLINE
-BOARD_KERNEL_CMDLINE :=console=ttyS0,115200 root=/dev/mmcblk0p7 init=/init vmalloc=384M coherent_pool=8M BOARD_KERNEL_CMDLINE :=ion_cma_list=120m,176m,640m loglevel=8 BOARD_KERNEL_CMDLINE :=partitions=bootloader@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:system@mmcblk0p7:misc@mmcblk0p8:recovery@mmcblk0p9:cache@mmcblk0p10:metadata@mmcblk0p11:private@mmcblk0p12:UDISK@mmcblk0p1 BOARD_KERNEL_CMDLINE :=boot_type=2 disp_para=100 config_size=58972
+BOARD_KERNEL_CMDLINE :=console=ttyS0,115200 root=/dev/mmcblk0p7 init=/init vmalloc=384M coherent_pool=8M ion_cma_list=120m,176m,640m loglevel=8 partitions=bootloader@mmcblk0p2:env@mmcblk0p5:boot@mmcblk0p6:system@mmcblk0p7:misc@mmcblk0p8:recovery@mmcblk0p9:cache@mmcblk0p10:metadata@mmcblk0p11:private@mmcblk0p12:UDISK@mmcblk0p1 boot_type=2 disp_para=100 config_size=58972
 
 #Partitions
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 792618598 #755.9 MB
